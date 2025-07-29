@@ -4,68 +4,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nexus Banking Solution</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #111827;
+      color: #f3f4f6;
     }
 
     header {
-      background: linear-gradient(135deg, #003366, #005c99);
-      color: white;
-      padding: 1.5rem 1rem;
-      text-align: center;
+      background-color: #1f2937;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
     }
 
-    header h1 {
-      margin: 0 0 0.3rem;
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f43f5e;
     }
 
     nav {
-      margin-top: 1rem;
+      display: flex;
+      gap: 1.2rem;
     }
 
     nav button {
-      background: white;
-      color: #003366;
+      background: none;
       border: none;
-      padding: 0.5rem 1rem;
-      margin: 0 0.5rem;
-      font-weight: 600;
-      border-radius: 5px;
+      color: #cbd5e1;
+      font-weight: 500;
       cursor: pointer;
-      transition: background 0.3s;
+      font-size: 1rem;
+      transition: color 0.3s;
     }
 
     nav button:hover {
-      background: #e0e0e0;
+      color: #f43f5e;
     }
 
     section {
       height: 100vh;
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
+      padding: 4rem 2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      max-width: 900px;
+      margin: auto;
       animation: fadeInUp 1s ease-out;
     }
 
     h2 {
-      color: #003366;
+      font-size: 2.5rem;
+      color: #f43f5e;
       margin-bottom: 1rem;
+    }
+
+    p, li {
+      color: #d1d5db;
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
     ul {
@@ -76,16 +87,12 @@
       margin-bottom: 0.5rem;
     }
 
-    .contact p {
-      margin-bottom: 0.5rem;
-    }
-
     footer {
-      background-color: #002244;
-      color: #ccc;
+      background-color: #1f2937;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
+      color: #94a3b8;
     }
 
     @keyframes fadeInUp {
@@ -93,20 +100,20 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       nav {
-        display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      nav button {
-        margin: 0.3rem 0;
+        align-items: flex-end;
+        gap: 0.8rem;
       }
 
       section {
-        padding: 1.5rem;
+        padding: 2rem 1rem;
         text-align: center;
+      }
+
+      h2 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -114,8 +121,7 @@
 <body>
 
   <header>
-    <h1>Nexus Banking Solution</h1>
-    <p>Empowering digital banking with smart, secure solutions</p>
+    <div class="logo">Nexus</div>
     <nav>
       <button onclick="scrollToSection('about')">About Us</button>
       <button onclick="scrollToSection('services')">Our Services</button>
@@ -124,7 +130,7 @@
   </header>
 
   <section id="about">
-    <h2>About Us</h2>
+    <h2>Hi, Welcome to Nexus Banking Solution</h2>
     <p>
       We provide innovative banking technology that powers financial institutions with secure, scalable, and future-ready solutions.
     </p>
@@ -141,7 +147,7 @@
     </ul>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: contact@nexusbanking.com</p>
     <p>Phone: +91 98765 43210</p>
