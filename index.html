@@ -4,39 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nexus Banking Solution</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #f4f4f4;
+      background-color: #f9f9f9;
       color: #333;
+      line-height: 1.6;
     }
+
     header {
-      background-color: #003366;
-      color: #fff;
-      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #003366, #005c99);
+      color: white;
+      padding: 4rem 1rem;
       text-align: center;
+      animation: fadeInDown 1s ease-out;
     }
-    header h1 { margin: 0; }
-    .section {
-      padding: 2rem 1rem;
-      max-width: 800px;
-      margin: auto;
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-    .services ul {
-      padding-left: 20px;
+
+    header p {
+      font-size: 1.2rem;
     }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact p {
+      margin-bottom: 0.5rem;
+    }
+
     footer {
-      background: #222;
-      color: #aaa;
+      background-color: #002244;
+      color: #ccc;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
+      margin-top: 3rem;
+      animation: fadeIn 2s ease-out;
     }
-    a {
-      color: #007acc;
-      text-decoration: none;
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -44,32 +99,32 @@
 
   <header>
     <h1>Nexus Banking Solution</h1>
-    <p>Empowering modern banking with reliable tech solutions</p>
+    <p>Empowering digital banking with smart, secure solutions</p>
   </header>
 
-  <section class="section about">
+  <section class="about">
     <h2>About Us</h2>
     <p>
-      Nexus Banking Solution offers robust digital banking platforms, integration services, and scalable financial software. Our goal is to streamline and secure banking operations for institutions of all sizes.
+      We provide innovative banking technology that powers financial institutions with secure, scalable, and future-ready solutions.
     </p>
   </section>
 
-  <section class="section services">
+  <section class="services">
     <h2>Our Services</h2>
     <ul>
-      <li>Core Banking System Implementation</li>
-      <li>Banking API Integration</li>
-      <li>Mobile & Internet Banking Solutions</li>
-      <li>Digital Onboarding & KYC</li>
-      <li>Security Audits & Compliance</li>
+      <li>Core Banking Software</li>
+      <li>Mobile & Internet Banking Platforms</li>
+      <li>API Integration & Open Banking</li>
+      <li>Customer Onboarding & e-KYC</li>
+      <li>Cybersecurity & Compliance</li>
     </ul>
   </section>
 
-  <section class="section contact">
+  <section class="contact">
     <h2>Contact Us</h2>
     <p>Email: contact@nexusbanking.com</p>
-    <p>Phone: +91 98765 00000</p>
-    <p>Address: Technopark, Trivandrum, Kerala</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Location: Technopark, Trivandrum, Kerala</p>
   </section>
 
   <footer>
