@@ -8,32 +8,48 @@
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      scroll-behavior: smooth;
     }
 
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #f9f9f9;
       color: #333;
-      line-height: 1.6;
     }
 
     header {
       background: linear-gradient(135deg, #003366, #005c99);
       color: white;
-      padding: 4rem 1rem;
+      padding: 1.5rem 1rem;
       text-align: center;
-      animation: fadeInDown 1s ease-out;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.3rem;
     }
 
-    header p {
-      font-size: 1.2rem;
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav button {
+      background: white;
+      color: #003366;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    nav button:hover {
+      background: #e0e0e0;
     }
 
     section {
@@ -44,8 +60,8 @@
     }
 
     h2 {
-      margin-bottom: 1rem;
       color: #003366;
+      margin-bottom: 1rem;
     }
 
     ul {
@@ -56,10 +72,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .contact p {
-      margin-bottom: 0.5rem;
-    }
-
     footer {
       background-color: #002244;
       color: #ccc;
@@ -67,12 +79,6 @@
       padding: 1rem;
       font-size: 0.9rem;
       margin-top: 3rem;
-      animation: fadeIn 2s ease-out;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeInUp {
@@ -80,17 +86,11 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      section {
-        padding: 1rem;
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
       }
     }
   </style>
@@ -100,16 +100,21 @@
   <header>
     <h1>Nexus Banking Solution</h1>
     <p>Empowering digital banking with smart, secure solutions</p>
+    <nav>
+      <button onclick="scrollToSection('about')">About Us</button>
+      <button onclick="scrollToSection('services')">Our Services</button>
+      <button onclick="scrollToSection('contact')">Contact Us</button>
+    </nav>
   </header>
 
-  <section class="about">
+  <section id="about">
     <h2>About Us</h2>
     <p>
       We provide innovative banking technology that powers financial institutions with secure, scalable, and future-ready solutions.
     </p>
   </section>
 
-  <section class="services">
+  <section id="services">
     <h2>Our Services</h2>
     <ul>
       <li>Core Banking Software</li>
@@ -120,7 +125,7 @@
     </ul>
   </section>
 
-  <section class="contact">
+  <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: contact@nexusbanking.com</p>
     <p>Phone: +91 98765 43210</p>
@@ -130,6 +135,12 @@
   <footer>
     &copy; 2025 Nexus Banking Solution. All rights reserved.
   </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
